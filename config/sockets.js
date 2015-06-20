@@ -12,7 +12,10 @@
 
 module.exports.sockets = {
 
-
+  // Raspberry Pi B/B+ are slower,
+  // longer timeout
+  _hookTimeout: 240000,
+   
   /***************************************************************************
   *                                                                          *
   * This custom afterDisconnect function will be run each time a socket         *
