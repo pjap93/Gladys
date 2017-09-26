@@ -94,8 +94,19 @@ module.exports = {
 
   getDeviceTypeByCategory:
   `
-    SELECT devicetype.* FROM devicetype 
+    SELECT devicetype.*, ds3.value AS lastValue, ds3.id AS lastValueId
+    FROM devicetype 
     JOIN device ON devicetype.device = device.id 
+    LEFT JOIN (
+      SELECT ds.devicetype, MAX(id) as id
+      FROM devicestate ds 
+      INNER JOIN (
+        SELECT devicetype, MAX(datetime) as datetime FROM devicestate GROUP BY devicetype
+      ) as dsJoin
+      WHERE dsJoin.devicetype = ds.devicetype AND dsJoin.datetime = ds.datetime
+      GROUP by ds.devicetype
+    ) as deviceStateJoin ON (deviceStateJoin.devicetype = devicetype.id)
+    LEFT JOIN devicestate ds3 ON deviceStateJoin.id = ds3.id
     WHERE category = ?
     AND (room = ? OR ? IS NULL)
     AND (type = ? OR ? IS NULL);
