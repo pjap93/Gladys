@@ -31,7 +31,7 @@
             return $http({method: 'GET', url: '/machine'});
         }
 		
-		function create(machine) {
+	function create(machine) {
             return $http({method: 'POST', url: '/machine', data: machine});
         }
 

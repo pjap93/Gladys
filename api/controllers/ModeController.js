@@ -88,6 +88,26 @@ module.exports = {
               return res.json(event);
           })
           .catch(next);
+    },
+
+     /**
+     * @api {patch} /mode/:id update a mode
+     * @apiName updateMode
+     * @apiGroup Mode
+     * @apiPermission authenticated
+     *
+     * @apiUse Mode
+     * 
+     * @apiUse ModeSuccess
+     */
+    update: function(req, res, next){
+        
+        req.body.id = req.params.id;
+        gladys.mode.update(req.body)
+          .then(function(mode){
+              return res.json(mode);
+          })
+          .catch(next);
     }
 	
 };

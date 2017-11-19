@@ -1,4 +1,4 @@
-/** 
+﻿/** 
   * Gladys Project
   * http://gladysproject.com
   * Software under licence Creative Commons 3.0 France 
@@ -20,6 +20,8 @@
         /* jshint validthis: true */
         var vm = this;
 
+        vm.updateHouse = updateHouse;
+        vm.updateRoom = updateRoom;
         vm.createHouse = createHouse;
         vm.createRoom = createRoom;
         vm.deleteHouse = deleteHouse;
@@ -31,6 +33,8 @@
         
         vm.houses = [];
         vm.rooms = [];
+        vm.savinghouse = false;
+        vm.savingroom = false;
 
         activate();
 
@@ -117,5 +121,22 @@
         function resetNewRoomFields() {
             vm.newRoom = {};
         }
+
+        function updateHouse(house){
+            vm.savinghouse = true;
+            return houseService.update(house.id, house)
+              .then(function(data){
+                  vm.savinghouse = false;
+              });
+        }
+
+        function updateRoom(room){
+            vm.savingroom = true;
+            return roomService.update(room.id, room)
+              .then(function(data){
+                  vm.savingroom = false;
+              });
+        }
+
     }
 })();

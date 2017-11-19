@@ -3,7 +3,7 @@
 <!-- NEW BOX -->
 <div class="box box-default">
     <div class="box-header with-border">
-        <h3 class="box-title"><%= __('house-box-title') %></h3>
+        <h3 class="box-title"><%= __('house-box-title') %> <small ng-show="vm.savinghouse"><%= __('house-box-saving') %></small></h3>
     </div>
 
 <div class="box-body table-responsive">
@@ -29,13 +29,13 @@
         <tbody>
             <tr ng-repeat="house in vm.houses" class="ng-cloak">
                 <td>{{house.id}}</td>
-                <td>{{house.name}}</td>
-                <td>{{house.address}}</td>
-                <td>{{house.city}}</td>
-                <td>{{house.postcode}}</td>
-                <td>{{house.country}}</td>
-                <td>{{house.latitude}}</td>
-                <td>{{house.longitude}}</td>
+                <td><input type="text" ng-model="house.name" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.address" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.city" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.postcode" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.country" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.latitude" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
+                <td><input type="text" ng-model="house.longitude" ng-model-options='{ debounce: 500 }' ng-change="vm.updateHouse(house);" class="form-control" /></td>
                 <td><button ng-click="vm.deleteHouse($index, house.id)" class= "btn btn-danger btn-sm"><%= __('Delete') %></button></td>
             </tr>
             <tr>
@@ -61,7 +61,7 @@
 <!-- NEW BOX -->
 <div class="box box-default">
     <div class="box-header with-border">
-        <h3 class="box-title"><%= __('room-box-title') %></h3>
+        <h3 class="box-title"><%= __('room-box-title') %> <small ng-show="vm.savingroom"><%= __('room-box-saving') %></small></h3>
     </div>
     
     <div class="box-body table-responsive">
@@ -78,8 +78,13 @@
         <tbody>
             <tr ng-repeat="room in vm.rooms" class="ng-cloak">
                 <td>{{room.id}}</td>
-                <td>{{room.name}}</td>
-                <td>{{room.houseName}}</td>
+                <td><input type="text" ng-model="room.name" ng-model-options='{ debounce: 500 }' ng-change="vm.updateRoom(room);" class="form-control" /></td>
+                <td>
+                    <select name="selectHouse" class="form-control"
+                         ng-options="house.id as house.name for house in vm.houses"
+                         ng-model="room.house" ng-change="vm.updateRoom(room);">
+                    </select>
+                </td>
                 <td><button ng-click="vm.deleteRoom($index, room.id)" class= "btn btn-danger btn-sm"><%= __('Delete') %></button></td>
             </tr>
             <tr class="ng-cloak"> 

@@ -22,6 +22,7 @@
             get: get, 
             create: create,
             destroy: destroy,
+            update: update,
             changeMode: changeMode
         };
 
@@ -31,7 +32,7 @@
             return $http({method: 'GET', url: '/mode' });
         }
 		
-		function create(mode) {
+	function create(mode) {
             return $http({method: 'POST', url: '/mode', data: mode });
         }
         
@@ -42,5 +43,10 @@
         function changeMode(house, mode){
             return $http({method: 'POST', url: '/house/' + house + '/mode', data: {mode: mode} });
         }
+
+        function update(id, mode) {
+            return $http({method: 'PATCH', url: '/mode/' + id, data: mode});
+        }
+
     }
 })();

@@ -1,7 +1,7 @@
 <!-- NEW BOX -->
 <div class="box box-default">
 <div class="box-header with-border">
-    <h3 class="box-title"><%= __('parameters-box-title') %></h3>
+    <h3 class="box-title"><%= __('parameters-box-title') %> <small ng-show="vm.saving"><%= __('house-box-saving') %></small></h3>
 </div>
         
         <div class="box-body table-responsive" data-ng-controller="BoxCtrl as vm">
@@ -20,18 +20,14 @@
                         <tbody>
                             <tr ng-repeat="box in vm.boxs" class="ng-cloak">
                                 <td>{{box.boxType.title}}</td>
-                                <td>{{box.x}}</td>
-                                <td>{{box.y}}</td>
+                                <td><input type="text" ng-model="box.x" ng-model-options='{ debounce: 500 }' ng-change="vm.updateBox(box);"  class="form-control" /></td>
+                                <td><input type="text" ng-model="box.y" ng-model-options='{ debounce: 500 }' ng-change="vm.updateBox(box);"  class="form-control" /></td>
                                 <td><button ng-click="vm.switchStatus($index, token.id)"class="btn {{ box.active && 'btn-success' || 'btn-danger' }} btn-sm">{{box.active && 'On' || 'Off' }}</button></td>
                                 <td><button ng-click="vm.destroy($index, box.id);" class= "btn btn-danger btn-sm"><%= __('Delete') %></button></td>
                             </tr>
                             <tr>
-                                <td><select name="selectBoxType" id="selectBoxType" class="form-control"
-                                                            ng-options="boxType.title for boxType in vm.boxTypes track by boxType.id"
-                                                            ng-model="vm.newBox.boxtype" >
-                                     </select>
-                                </select>
-                                </td>
+                                <td><select name="selectBoxType" id="selectBoxType" class="form-control" ng-options="boxType.title for boxType in vm.boxTypes track by boxType.id" ng-model="vm.newBox.boxtype" >
+                                    </select></td>
                                 <td><input type="text" ng-model="vm.newBox.x"class="form-control" placeholder="x"/></td>
                                 <td><input type="text" ng-model="vm.newBox.y"class="form-control" placeholder="y"/></td>
                                 <td><input type="text" disabled ng-model="vm.newBox.active"class="form-control" value="1" /></td>

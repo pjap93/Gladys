@@ -21,6 +21,8 @@
         var vm = this;
         vm.create = create;
         vm.destroy = destroy;
+        vm.updateBox = updateBox;
+        vm.saving = false;
         vm.newBox = {};
         vm.boxs = [];
         vm.boxTypes = [];
@@ -59,7 +61,14 @@
                   vm.boxs.splice(index, 1);
               });
         }
-        
+       
+        function updateBox(box){
+            vm.saving = true;
+            return boxService.update(box.id, box)
+              .then(function(data){
+                  vm.saving = false;
+              });
+        }
        
     }
 })();

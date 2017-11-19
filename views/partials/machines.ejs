@@ -21,12 +21,11 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="machine in vm.machines" class="ng-cloak">
-                            <td>{{machine.uuid}}</td>
-                            <td>{{machine.name}}</td>
-                            <td><select  class="form-control" ng-model="machine.house" ng-change="vm.updateMachine(machine);">
-                                    <option ng-repeat="house in vm.houses" ng-value="house.id" ng-selected="(house.id == machine.house)" >{{house.name}}</option>
+                             <td>{{machine.uuid}}</td>
+                             <td><input type="text" class="form-control" ng-model="machine.name" ng-model-options='{ debounce: 500 }' ng-change="vm.updateMachine(machine);" /></td>
+                             <td><select name="selectHouse" class="form-control" ng-options="house.id as house.name for house in vm.houses" ng-model="machine.house" ng-change="vm.updateMachine(machine);">
                                 </select>
-                                </td>
+                             </td>
                             <td><input type="text" class="form-control" ng-model="machine.host" ng-model-options='{ debounce: 500 }' ng-change="vm.updateMachine(machine);" /></td>
                             <td><div ng-show="machine.me"><%= __('Yes') %></div><div ng-show="!machine.me"><%= __('No') %></div></td>
                             <td><button ng-click="vm.deleteMachine($index, machine.id)" class="btn btn-danger btn-sm" ><%= __('Delete') %></button></td>

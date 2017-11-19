@@ -21,7 +21,7 @@
         var vm = this;
     	vm.createMachine = createMachine;
         vm.updateMachine = updateMachine;
-		vm.deleteMachine = deleteMachine;
+	vm.deleteMachine = deleteMachine;
 
         vm.houses = [];
         vm.saving = false;

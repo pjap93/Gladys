@@ -18,9 +18,9 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="mode in vm.modes" class="ng-cloak">
-                        <td>{{mode.code}}</td>
-                        <td>{{mode.name}}</td>
-                        <td>{{mode.description}}</td>
+                        <td><input type="text" ng-model="mode.code" ng-model-options='{ debounce: 500 }' ng-change="vm.updateMode(mode);"  class="form-control" /></td>
+                        <td><input type="text" ng-model="mode.name" ng-model-options='{ debounce: 500 }' ng-change="vm.updateMode(mode);"  class="form-control" /></td>
+                        <td><input type="text" ng-model="mode.description" ng-model-options='{ debounce: 500 }' ng-change="vm.updateMode(mode);"  class="form-control" /></td>
                         <td><button ng-click="vm.destroyMode($index, mode.id)" class= "btn btn-danger btn-sm"><%= __('mode-delete') %></button></td>
                     </tr>
                     <tr>

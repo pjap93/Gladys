@@ -1,4 +1,4 @@
-/** 
+﻿/** 
   * Gladys Project
   * http://gladysproject.com
   * Software under licence Creative Commons 3.0 France 
@@ -25,6 +25,7 @@
     vm.changeValue = changeValue;
     vm.updateDeviceType = updateDeviceType;
     vm.changeTypeDisplay = changeTypeDisplay;
+    vm.changeTypeSensor = changeTypeSensor;
     vm.createDevice = createDevice;
     vm.deleteDevice = deleteDevice;
     vm.createDeviceType = createDeviceType;
@@ -136,7 +137,10 @@
             id: device.id,
             room: device.room.id,
             user: device.user,
-            name: device.name
+            name: device.name,
+            identifier: device.identifier,
+            protocol: device.protocol,
+            service: device.service
         };
         return deviceService.updateDevice(newDevice)
              .then(function(device){
@@ -207,6 +211,14 @@
         
         return updateDeviceType(type);
     }
+
+    function changeTypeSensor(type){
+        if(type.sensor) type.sensor = 0;
+        else type.sensor = 1;
+        
+        return updateDeviceType(type);
+    }
+
     
      // waiting for websocket message
     function waitForNewValue(){

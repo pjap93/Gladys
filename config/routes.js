@@ -71,6 +71,7 @@ module.exports.routes = {
   'get /box': 'BoxController.index',
   'post /box': 'BoxController.create',
   'delete /box/:id': 'BoxController.delete',
+  'patch /box/:id': 'BoxController.update',
   
   //BoxType
   'get /boxtype' : 'BoxTypeController.index',
@@ -153,6 +154,7 @@ module.exports.routes = {
   'post /mode': 'ModeController.create',
   'delete /mode/:id': 'ModeController.delete',
   'post /house/:id/mode': 'ModeController.change', 
+  'patch /mode/:id': 'ModeController.update',
   
   // Module
   'get /module': 'ModuleController.index',

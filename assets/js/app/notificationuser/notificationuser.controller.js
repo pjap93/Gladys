@@ -22,9 +22,11 @@
 
         vm.notificationUsers = [];
         vm.notificationTypes = [];
+        vm.saving = false;
         
         vm.createNotificationUser = createNotificationUser;
         vm.destroyNotificationUser = destroyNotificationUser;
+        vm.updateNotificationUser = updateNotificationUser;
 
         activate();
 
@@ -62,7 +64,13 @@
               });
         }
 
-        
+        function updateNotificationUser(id, param){
+           vm.saving = true;
+           return notificationUserService.update(id, param)
+             .then(function(){
+                vm.saving = false; 
+             });
+       }
         
     }
 })();
