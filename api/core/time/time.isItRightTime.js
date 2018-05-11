@@ -1,30 +1,6 @@
 const moment = require('moment');
 const Promise = require('bluebird');
 
-/**
- * @public
- * @description This function return true or false is it the right time
- * @name gladys.time.isItRightTime
- * @param {Object} option
- * @param {string} option.start Beginning of the interval for validation (HH:MM:SS) default value 00:00:00
- * @param {string} option.end End of the interval for validation (HH:MM:SS) default value 23:59:59
- * @returns {Time} time
- * 
- * @example
- * var option = {
- *	start: '10:00:00',
- *	end: '15:00:00'
- * };
- * 
- * gladys.time.isItRightTime(option)
- *      .then(function(isItTime){
- *          if(isItTime){
- *              //The time is within the given range.
- *          }else{
- *              //The time is not in the given range.
- *          }
- *      });
- */
 
 module.exports = function isItRightTime(options){
 
