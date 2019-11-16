@@ -1,189 +1,85 @@
-Gladys Project
-=======================
+<h1 align="center">
+  <br>
+	<img src="https://gladysassistant.com/assets/images/external/github-gladys-logo.png" width="200">
+  <br>
+  Gladys Assistant
+</h1>
 
-[![Build Status](https://travis-ci.org/GladysProject/Gladys.svg?branch=v3)](https://travis-ci.org/GladysProject/Gladys)
+<h4 align="center">A privacy-first, open-source home assistant</h4>
 
-![Alt](https://gladysproject.com/assets/images/presentation/facebook_share_gladys.jpg)
+<p align="center">
+	
+</p>
 
-The Project
--------------
+<p align="center">
+  <a href="#the-project">The Project</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#contributing">Contributing</a> •
+  <a href="#support-financially">Support Financially</a> •
+  <a href="#links">Links</a> •
+  <a href="#copyright--license">Copyright & License</a> 
+</p>
 
-Gladys is an home automation assistant to help you in your everyday life.
+<img src="https://gladysassistant.com/assets/images/external/github-gladys-4-mockups-devices.jpg" />
 
-Yes, like a kind of **JARVIS**!
+## The Project
 
-Gladys is connected to all your devices in your home, she is connected to your calendar, to a lots of API to help you. But let's pick an example :
+Gladys is a home assistant who helps you in your everyday life.
 
-- It's 8 AM. Gladys wakes you up automatically because she knows that you need to be at work at 9 AM, and that according to the traffic, you'll need 30min to go to work with your car. She knows that you like 30 min to get ready.
-She wakes you up with a soft progressive warm light thanks to your Philips Hue, and puts a nice music in your room.
+Like a kind of **JARVIS**!
+
+Gladys is connected to all your devices in your home. She is connected to your calendars and tons of API to help you.
+
+But let's pick an example:
+
+- It's 8 AM. Gladys wakes you up automatically because she knows that you need to be at work at 9 AM, and that according to the traffic, you'll need 30min to go to work with your car. She knows that you like 30 min to get ready. She wakes you up with a soft progressive warm light thanks to your Philips Hue, and puts a nice music in your room.
 - It's 8.10 AM, Gladys detects thanks to a motion sensor that you are getting out of bed. She immediately starts the wake-up scenario : she tells the coffee machine to prepare the coffee, and opens the blinds.
 - At 8.30 AM, you leave the house. Gladys detects thanks to your smartphone that you are not at home anymore, and shuts down everything inside.
-- At 6.30 PM, you are getting back home : Everything is ready when you arrive.
-- You are going to sleep, so you simply put your phone on your nightstand where a NFC tag is sticked. It immediately sends a request to Gladys to tell here you are going to sleep. She starts the "Going to sleep" scenario, and turns off all lights.
+- At 6.30 PM, you are getting back home : Everything is ready when you arrive. You are going to sleep, so you simply put your phone on your nightstand where a NFC tag is sticked. It immediately sends a request to Gladys to tell here you are going to sleep. She starts the "Going to sleep" scenario, and turns off all lights.
 
-This is just a simple scenario, possibilities with Gladys are just endless ! Don't hesitate to propose yours :)
+This is just a simple scenario, possibilities with Gladys are just endless. Don't hesitate to suggest yours 😉
 
-Interested in Gladys ? Try it at home, it's free and Open-Source !
+## Getting Started
 
-**Website :** [https://gladysproject.com](http://gladysproject.com) <br>
-**Community :** [https://community.gladysproject.com/](https://community.gladysproject.com/)
+Right now we are migrating from Gladys 3 to Gladys 4, a new release rewrote from scratch. If you want to install Gladys 3, visit [our website](https://gladysassistant.com).
 
-Gladys Raspbian image has **more than 32 000 downloads**, and Gladys community has more than **3 000 members** ! 
+To install Gladys 4 Alpha, read the following instructions.
 
-Who Am I ?
--------------
+We use Docker to deploy Gladys 4, so it's easy to install it on any system.
 
-My name is [Pierre-Gilles Leymarie](https://twitter.com/pierregillesl), I'm an indie maker, and recently I decided to move part-time on this open-source project Gladys!
+### On a Raspberry Pi
 
-As I'm working completely for free for the community, you can support my work on [Patreon](https://www.patreon.com/gladysproject/overview) or [PayPal](https://www.paypal.me/gladysproject/35), to help me pay my food and rent so I'll not die 🤤😄
+Read our tutorial: [Install Gladys 4 on a Raspberry Pi](https://documentation.gladysassistant.com/en/installation#raspberry-pi)
 
-Thanks a lot for your support 🙏
+### On MacOS/Windows
 
-Specifications
--------------
+Read our tutorial: [Install Gladys 4 on MacOS/Windows](https://documentation.gladysassistant.com/en/installation#macos-windows)
 
-Gladys is 100% written in Node.js.
+## Contributing
 
-Prerequisites
--------------
+Pull requests are welcomed!
 
-- [Node.js](http://nodejs.org) ( >= v4.x.x  and < 10.x.x)
-- [MySQL](http://www.mysql.com/)
-- Command Line Tools
- - <img src="http://deluge-torrent.org/images/apple-logo.gif" height="17">&nbsp;**Mac OS X**: [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) (or **OS X 10.9 Mavericks**: `xcode-select --install`)
- - <img src="http://dc942d419843af05523b-ff74ae13537a01be6cfec5927837dcfe.r14.cf1.rackcdn.com/wp-content/uploads/windows-8-50x50.jpg" height="17">&nbsp;**Windows**: [Visual Studio](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-8)
- - <img src="https://lh5.googleusercontent.com/-2YS1ceHWyys/AAAAAAAAAAI/AAAAAAAAAAc/0LCb_tsTvmU/s46-c-k/photo.jpg" height="17">&nbsp;**Ubuntu**, **Debian**: `sudo apt-get install build-essential`
+Read [Contributing.md](https://github.com/gladysassistant/Gladys/blob/master/.github/CONTRIBUTING.md) for more details.
 
+## Support Financially
 
+My name is [Pierre-Gilles Leymarie](https://twitter.com/pierregillesl), I founded Gladys Assistant in 2013 and recently I decided to work almost full-time on open-source.
 
- 
-Getting Started
----------------
+It's only thanks to donation from the community that my open-source work is sustainable.
 
-The easiest way to get started is to install on a Raspberry Pi Gladys with the Raspbian image. See [https://gladysproject.com](https://gladysproject.com) for more informations.
+To support the project, you can:
 
-But you can also install Gladys manually to develop on it:
+- Support monthly, 9.99€/month with the [Gladys Community Package](https://gladysassistant.com/gladys-community-package).
+- Donate with Bitcoin: 3KQiX1FtbdXLXPH9UfLSyuzRMDRGY52EiA
 
-```bash
-git clone https://github.com/GladysProject/gladys gladys
-```
+## Links
 
-```bash
-cd gladys
-```
+- [Website](https://gladysassistant.com)
+- [Community](https://community.gladysassistant.com/)
+- [Twitter](https://twitter.com/gladysassistant)
+- [Instagram](https://www.instagram.com/gladysassistant/)
+- [Facebook](https://www.facebook.com/gladysassistant)
 
-```bash
-npm install
-```
+## Copyright & License
 
-If you want to use grunt, install grunt-cli :
-
-```bash
-npm install -g grunt-cli
-```
-
-#### Connect Gladys to MySQL
-
-To connect Gladys to your database, you will need to set some environment variables.
-To do so, you'll have to create a `.env` file at the root of this project. The content of this file can be found by looking at `.env-sample`, which lists all the customizable env vars.
-
-**Note :** You will need to create the database as well in MySQL:
-
-```sql
-CREATE DATABASE gladys; -- or whatever name you've set in your .env file.`
-```
-
-#### Compile assets
-
-If you want to recompile assets and run all tasks, you can run :
-
-```
-grunt buildProd
-```
-
-#### Create tables
-
-Gladys create automatically all the tables it needs.
-
-You need to execute the init file :
-
-```bash
-node init.js
-```
-
-#### Start Gladys 
-
-```
-node app.js
-```
-
-#### Visit Gladys dashboard
-
-If you are on localhost, visit : `http://localhost:1337` (in development mode), or`http://localhost:8080` (in production).
-
-If you want to access Gladys anywhere on your local network, just replace localhost by the ip of your machine.
-
-## Starting Gladys in development mode
-
-To start Gladys on your machine in development mode, and connect to your local MySQL instance, you can create a `.env` file at the root of your Gladys folder with the following content: 
-
-```
-MYSQL_HOST=localhost
-MYSQL_PORT=3306
-MYSQL_USER=YOUR_MYSQL_USER
-MYSQL_PASSWORD=YOUR_MYSQL_PASSWORD
-MYSQL_DATABASE=YOUR_GLADYS_DBNAME
-```
-
-Then, to start Gladys in dev mode:
-
-```
-npm start
-```
-
-FAQ
--------------
-
-### `npm install` returns me a lot of errors !
-
-Make sure that node-gyp is working fine. Wait, what is node-gyp ?
->Node-gyp is a cross-platform command-line tool written in Node.js for compiling native addon modules for Node.js.
-
-To be sure that you're doing that good, check [node-gyp installation guide](https://github.com/TooTallNate/node-gyp#installation).
-
-
-Contributing
--------------
-
-Pull request are welcome, but code must follow some guidelines.
-
-* Use [JSHint](https://github.com/jshint/jshint).
-* For the AngularJS client code, follow [John Papa's Angular Style Guide](https://github.com/johnpapa/angular-styleguide).
-* Please Unit test your code. We use Mocha and Istanbul for code coverage. No pull requests will be accepted without good unit tests.
- 
-If you want to develop a new functionality, develop a Gladys Module instead of modifying the core! More about modules on the [website](https://gladysproject.com).
-
-Links
--------------
-
-- [Website](https://gladysproject.com)
-- [Community](https://community.gladysproject.com/)
-- [Developer Website](https://developer.gladysproject.com)
-- [Patreon](https://www.patreon.com/gladysproject/overview)
-- [Twitter](https://twitter.com/gladysproject)
-- [Instagram](https://www.instagram.com/gladysproject/)
-- [Facebook](https://www.facebook.com/gladysproject)
-
-Community
--------------
-
-Gladys it's not just a project, it's a community of people. And we like to meet in real life!
-
-See more on our Instagram account:
-
-[![Alt](https://gladysproject.com/assets/images/external/screenshot-instagram.png)](https://www.instagram.com/gladysproject/)
-
-Copyright & License
--------------
-
-Copyright (c) 2013-2018 Gladys Project - Released under the [MIT license](https://github.com/GladysProject/Gladys/blob/master/LICENSE).
+Copyright (c) 2013-2019 Gladys Assistant - Released under the [Apache 2.0 License](https://github.com/gladysassistant/Gladys/blob/master/LICENSE).
